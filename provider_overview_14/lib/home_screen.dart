@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:provider_overview_12/counter_model.dart';
-import 'package:provider_overview_12/counter_screen.dart';
+import 'package:provider_overview_14/counter_model.dart';
+import 'package:provider_overview_14/counter_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -9,9 +9,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Provider 12'),
-      ),
+      appBar: AppBar(title: const Text('Provider 14')),
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -22,12 +20,7 @@ class HomeScreen extends StatelessWidget {
             ),
             ElevatedButton(
               onPressed: () {
-                Navigator.of(context).push(MaterialPageRoute(
-                  builder: (_) => ChangeNotifierProvider.value(
-                    value: context.read<Counter>(),
-                    child: const CounterScreen(),
-                  ),
-                ));
+                Navigator.of(context).pushNamed('/counter');
               },
               child: const Text(
                 'Counter Screen',
